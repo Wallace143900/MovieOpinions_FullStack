@@ -17,13 +17,14 @@ model User {
 
 model Category {
   id    Int      @id @default(autoincrement())
-  name  String
+  name  String   @unique
   movies Movie[]
 }
 
 model Movie {
   id          Int       @id @default(autoincrement())
   title       String
+  imageURL    String
   description String
   time        Int
   categoryId  Int
