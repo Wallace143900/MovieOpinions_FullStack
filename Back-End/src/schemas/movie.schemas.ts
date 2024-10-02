@@ -4,7 +4,7 @@ import { categorySchema } from "./category.schemas";
 export const movieSchema = z.object({
     id: z.number().positive(),
     title: z.string().min(1),
-    imageUrl: z.string().min(1),
+    imageUrl: z.string().url().optional(),
     description: z.string().min(1),
     time: z.number().min(50),
     categoryId: z.number().positive().nullish()

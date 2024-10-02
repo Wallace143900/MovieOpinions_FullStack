@@ -14,9 +14,9 @@ export const reviewCreateSchema = reviewSchema.omit({ id: true, createdAt: true,
 
 export const reviewUpdateSchema = reviewCreateSchema.partial();
 
-export const TReviewReturn = reviewSchema.extend({category: movieSchema.nullish() }).omit({movieId: true});
+export const TReviewReturn = reviewSchema.extend({movie: movieSchema.nullish(), }).omit({movieId: true});
 
-export type TReview = z.infer<typeof movieSchema>;
+export type TReview = z.infer<typeof reviewSchema>;
 
 
 export type TReviewCreate = z.infer<typeof reviewCreateSchema>;

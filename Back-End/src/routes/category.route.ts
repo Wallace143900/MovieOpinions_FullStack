@@ -5,10 +5,10 @@ export const categoryRouter = Router();
 
 const categoryController = new CategoryController();
 
-categoryRouter.get('/categories', (req, res) => {
+categoryRouter.get('', (req, res) => {
     categoryController.getAllCategories(req, res)
 })
 
-categoryRouter.get('/categories/:id', (req, res) => {
+categoryRouter.get('/:id', (req, res) => {
     categoryController.getCategoryById(req, res)
 })
