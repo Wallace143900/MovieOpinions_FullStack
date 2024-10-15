@@ -22,8 +22,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
+require("reflect-metadata");
+require("express-async-errors");
 const express_1 = __importStar(require("express"));
+const category_route_1 = require("./routes/category.route");
+const movie_route_1 = require("./routes/movie.route");
+const user_route_1 = require("./routes/user.route");
+const review_route_1 = require("./routes/review.route");
+const helmet_1 = __importDefault(require("helmet"));
+const cors_1 = __importDefault(require("cors"));
 exports.app = (0, express_1.default)();
 exports.app.use((0, express_1.json)());
+exports.app.use((0, helmet_1.default)());
+exports.app.use((0, cors_1.default)());
+exports.app.use('/movies', movie_route_1.movieRouter);
+exports.app.use('/categories', category_route_1.categoryRouter);
+exports.app.use('/user', user_route_1.userRouter);
+exports.app.use("/reviews", review_route_1.reviewRouter);
