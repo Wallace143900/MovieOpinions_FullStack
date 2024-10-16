@@ -1,6 +1,6 @@
 # Estrutura do Backend e Integração com o Frontend
 
-O seu backend é construído usando o framework Express e possui várias rotas organizadas para lidar com categorias, filmes, avaliações e usuários. Vamos detalhar cada controlador, suas rotas, descrições e como você pode utilizá-las no frontend.
+O backend é construído usando o framework Express e possui várias rotas organizadas para lidar com categorias, filmes, avaliações e usuários. Vamos detalhar cada controlador, suas rotas, descrições e como você pode utilizá-las no frontend.
 
 ## Link do Deploy 
 https://movieopinions-backend.onrender.com
